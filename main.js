@@ -13,6 +13,19 @@ $(document).ready(function(){
     });
 });
 
+
+// NAVIGAZIONE img CON TASTIERA (usando le frecce dx/sx)
+$(document).keydown(function(event){
+    console.log(event.keyCode);
+
+    if(event.keyCode == 37){        // sx
+        successPrecImg('indietro');
+    }else if(event.keyCode == 39){  //dx
+        successPrecImg('avanti');
+    }
+});
+
+
 /*
     FUNZIONI, le posso portare anche all' interno di document.ready
 */
