@@ -13,6 +13,10 @@ $(document).ready(function(){
     });
 });
 
+/*
+    FUNZIONI, le posso portare anche all' interno di document.ready
+*/
+
 // la funzione permette di passare alla foto successiva/ precedente
 function successPrecImg(direzione){
     var imgAttiva = $('.images img.active');
@@ -23,7 +27,7 @@ function successPrecImg(direzione){
     cerchioAttivo.removeClass('active');
 
     //controllo parametro direzione: valori validi 'next', 'prev'
-    if(direzione === 'avanti'){
+    if(direzione === 'avanti'){             // VA AVANTI
         if(imgAttiva.hasClass('last')){
             $('.images img.first').addClass('active');
             $('.nav i.first').addClass('active');
@@ -31,10 +35,14 @@ function successPrecImg(direzione){
             imgAttiva.next('img').addClass('active');
             cerchioAttivo.next('i').addClass('active');
         }
-    }else if(direzione === 'indietro'){
+    }else if(direzione === 'indietro'){     // TORNA INDIETRO
         if(imgAttiva.hasClass('first')){
             $('.images img.last').addClass('active');
             $('.nav i.last').addClass('active');
+        }else{
+            imgAttiva.prev('img').addClass('active');
+            cerchioAttivo.prev('i').addClass('active');
         }
     }
 }
+
